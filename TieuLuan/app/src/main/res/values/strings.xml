@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Trang Chủ</string>
+    <string name="title_activity_map">Map</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="map_api" translatable="false">
+        AIzaSyA1uHm_4CxlByYNHcPHKvXkt6c5IO9WV4Q
+    </string>
+</resources>
