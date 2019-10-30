@@ -16,8 +16,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class AdapterTenshop extends BaseAdapter {
-    ArrayList<Tenshop> arraylisttenshop;
     Context context;
+    ArrayList<Tenshop> arraylisttenshop;
+
 
     public AdapterTenshop(ArrayList<Tenshop> arraylisttenshop, Context context) {
         this.arraylisttenshop = arraylisttenshop;
@@ -36,6 +37,7 @@ public class AdapterTenshop extends BaseAdapter {
 
     @Override
     public long getItemId(int i) {
+
         return i;
     }
     private class ViewHolder{

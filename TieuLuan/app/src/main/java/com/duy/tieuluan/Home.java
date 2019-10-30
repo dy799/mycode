@@ -16,26 +16,43 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ListView;
 import android.widget.TextView;
 
 
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonArrayRequest;
+import com.android.volley.toolbox.Volley;
+import com.duy.tieuluan.Adapter.AdapterFood;
+import com.duy.tieuluan.Model.Food;
+import com.duy.tieuluan.ultil.Server;
 import com.google.android.material.bottomnavigation.BottomNavigationMenu;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
+
 
 public class Home extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-
     TextView txtFullName;
-    RecyclerView recycler_menu;
+    RecyclerView recyclerView;
     RecyclerView.LayoutManager layoutManager;
-
+    ArrayList<Food> mangfd;
+    AdapterFood adapterFood;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+        Anhxa();
+        Getdulieumoinhat();
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -56,6 +73,53 @@ public class Home extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
+    }
+
+    private void Getdulieumoinhat() {
+        RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
+        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Server.Duongdanfdmonhat, new Response.Listener<JSONArray>() {
+            @Override
+            public void onResponse(JSONArray response) {
+                if (response != null){
+                    int ID = 0;
+                    String Tenfood = "";
+                    Integer Giafood = 0;
+                    String Hinhfood = "";
+                    String Motafood = "";
+                    int IDfood = 0;
+                    for ( int i = 0; i <response.length();i++) {
+                        try {
+                            JSONObject jsonObject = response.getJSONObject(i);
+                            ID = jsonObject.getInt("id");
+                            Tenfood = jsonObject.getString("tenfd");
+                            Giafood = jsonObject.getInt("giafd");
+                            Hinhfood = jsonObject.getString("hinhfd");
+                            Motafood = jsonObject.getString("motafd");
+                            IDfood = jsonObject.getInt("idfd");
+                            mangfd.add(new Food(ID,Tenfood,Giafood,Hinhfood,Motafood,IDfood));
+                            adapterFood.notifyDataSetChanged();
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+
+            }
+        });
+        requestQueue.add(jsonArrayRequest);
+    }
+
+    private void Anhxa() {
+        recyclerView = findViewById(R.id.recyclerView);
+        mangfd = new ArrayList<>();
+        adapterFood = new AdapterFood(getApplicationContext(),mangfd);
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(new GridLayoutManager(getApplicationContext(),2));
+        recyclerView.setAdapter(adapterFood);
     }
 
     @Override

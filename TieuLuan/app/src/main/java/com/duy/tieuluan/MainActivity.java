@@ -7,7 +7,25 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonArrayRequest;
+import com.android.volley.toolbox.Volley;
+import com.duy.tieuluan.Adapter.AdapterFood;
+import com.duy.tieuluan.Model.Food;
+import com.duy.tieuluan.Model.Tenshop;
+import com.duy.tieuluan.ultil.KiemTraInternet;
+import com.duy.tieuluan.ultil.Server;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
+
 import static com.duy.tieuluan.R.id.btnSignIn;
+import static com.duy.tieuluan.R.id.recyclerView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -33,9 +51,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
+
     protected void AnhXa (){
         btnSignIn = (Button) findViewById(R.id.btnSignIn);
         btnSignUp = (Button) findViewById(R.id.btnSignUp);
+
+
+
     }
 
 }
