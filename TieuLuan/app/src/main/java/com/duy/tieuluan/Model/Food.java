@@ -1,6 +1,6 @@
 package com.duy.tieuluan.Model;
 
-public class Food {
+public class Food extends com.duy.tieuluan.Food {
     public int ID;
     public String Tenfood;
     public Integer Giafood;

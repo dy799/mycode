@@ -18,6 +18,10 @@ import com.android.volley.toolbox.Volley;
 import com.duy.tieuluan.Adapter.FoodAdapter;
 import com.duy.tieuluan.ultil.Server;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -50,9 +54,25 @@ public class Food extends AppCompatActivity {
                 String Tenfd = "";
                 int Giafd = 0;
                 String Hinhanhfd = "";
-                String Mota = "";
+                String Motafd = "";
                 int Idspfd = 0;
                 if (response!=null){
+                    try {
+                        JSONArray jsonArray = new JSONArray(response);
+                        for (int i = 0; i<jsonArray.length();i++) {
+                            JSONObject jsonObject = jsonArray.getJSONObject(i);
+                            id = jsonObject.getInt("id");
+                            Tenfd = jsonObject.getString("tenfd");
+                            Giafd = jsonObject.getInt("giafd");
+                            Hinhanhfd = jsonObject.getString("hinhfd");
+                            Motafd = jsonObject.getString("motafd");
+                            Idspfd = jsonObject.getInt("idfd");
+                            mangfd.add(new com.duy.tieuluan.Model.Food(id, Tenfd, Giafd, Hinhanhfd, Motafd, Idspfd));
+                            foodAdapter.notifyDataSetChanged();
+                        }
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
 
 
                 }
