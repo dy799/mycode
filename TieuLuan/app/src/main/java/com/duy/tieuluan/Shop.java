@@ -29,9 +29,11 @@ public class Shop extends AppCompatActivity {
     ListView lvshop;
     ArrayList<Tenshop> mangtenshop;
     AdapterTenshop adapterTenshop;
-    int id = 0;
-    String tenshop = "";
-    String hinhshop = "";
+    int idfd = 0;
+    String tenfd = "";
+    String hinhfd = "";
+    int giafd = 0;
+    String motafood = "";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,10 +56,12 @@ public class Shop extends AppCompatActivity {
                     for ( int i = 0; i <response.length();i++) {
                         try {
                             JSONObject jsonObject = response.getJSONObject(i);
-                            id = jsonObject.getInt("id");
-                            tenshop = jsonObject.getString("tenshop");
-                            hinhshop = jsonObject.getString("hinhshop");
-                            mangtenshop.add(new Tenshop(id,tenshop,hinhshop));
+                            idfd = jsonObject.getInt("idtrasua");
+                            tenfd = jsonObject.getString("tentrasua");
+                            hinhfd = jsonObject.getString("hinhtrasua");
+                            giafd = jsonObject.getInt("giatrasua");
+                            motafood = jsonObject.getString("diachitrasua");
+                            mangtenshop.add(new Tenshop(idfd,tenfd,hinhfd,giafd,motafood));
                             adapterTenshop.notifyDataSetChanged();
                         } catch (JSONException e) {
                             e.printStackTrace();

@@ -19,7 +19,6 @@ public class AdapterTenshop extends BaseAdapter {
     Context context;
     ArrayList<Tenshop> arraylisttenshop;
 
-
     public AdapterTenshop(ArrayList<Tenshop> arraylisttenshop, Context context) {
         this.arraylisttenshop = arraylisttenshop;
         this.context = context;
@@ -41,7 +40,7 @@ public class AdapterTenshop extends BaseAdapter {
         return i;
     }
     private class ViewHolder{
-        TextView txttenshop;
+        TextView txttenshop,txtgiafood, txtmotafood;
         ImageView imagetenshop;
     }
 
@@ -51,9 +50,11 @@ public class AdapterTenshop extends BaseAdapter {
         if(view == null){
             viewHolder = new ViewHolder();
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            view = inflater.inflate(R.layout.listview_tenshop,null);
-            viewHolder.txttenshop = (TextView) view.findViewById(R.id.texttenshop);
-            viewHolder.imagetenshop = (ImageView) view.findViewById(R.id.imagetenshop);
+            view = inflater.inflate(R.layout.food_listview,null);
+            viewHolder.txttenshop = (TextView) view.findViewById(R.id.txttenfood);
+            viewHolder.imagetenshop = (ImageView) view.findViewById(R.id.imgfood);
+            viewHolder.txtgiafood = (TextView) view.findViewById(R.id.txtgia);
+            viewHolder.txtmotafood = (TextView) view.findViewById(R.id.txtmotafood);
             view.setTag(viewHolder);
         }else{
             viewHolder = (ViewHolder) view.getTag();
@@ -61,6 +62,9 @@ public class AdapterTenshop extends BaseAdapter {
         Tenshop tenshop = (Tenshop) getItem(i);
 
         viewHolder.txttenshop.setText(tenshop.getTenshop());
+        viewHolder.txtmotafood.setText(tenshop.getMotafd());
+
+        //viewHolder.txtgiafood.setText(tenshop.getGia());
         Picasso.with(context).load(tenshop.getHinhshop())
                 .placeholder(R.drawable.bg)
                 .error(R.drawable.background)

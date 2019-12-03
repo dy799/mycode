@@ -50,7 +50,7 @@ public class Food extends AppCompatActivity {
         StringRequest stringRequest = new StringRequest(Request.Method.POST, duongdan, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
-                int id = 0;
+                int Id = 0;
                 String Tenfd = "";
                 int Giafd = 0;
                 String Hinhanhfd = "";
@@ -61,13 +61,13 @@ public class Food extends AppCompatActivity {
                         JSONArray jsonArray = new JSONArray(response);
                         for (int i = 0; i<jsonArray.length();i++) {
                             JSONObject jsonObject = jsonArray.getJSONObject(i);
-                            id = jsonObject.getInt("id");
+                            Id = jsonObject.getInt("id");
                             Tenfd = jsonObject.getString("tenfd");
                             Giafd = jsonObject.getInt("giafd");
                             Hinhanhfd = jsonObject.getString("hinhfd");
                             Motafd = jsonObject.getString("motafd");
                             Idspfd = jsonObject.getInt("idfd");
-                            mangfd.add(new com.duy.tieuluan.Model.Food(id, Tenfd, Giafd, Hinhanhfd, Motafd, Idspfd));
+                            mangfd.add(new com.duy.tieuluan.Model.Food(Id, Tenfd, Giafd, Hinhanhfd, Motafd, Idspfd));
                             foodAdapter.notifyDataSetChanged();
                         }
                     } catch (JSONException e) {
@@ -114,7 +114,7 @@ public class Food extends AppCompatActivity {
         toolbarfd = findViewById(R.id.toolbarfood);
         lvfd = findViewById(R.id.lvfood);
         mangfd = new ArrayList<>();
-        //foodAdapter = new FoodAdapter(getApplicationContext(),mangfd);
+        //foodAdapter = new FoodAdapter(mangfd,getApplicationContext());
         lvfd.setAdapter(foodAdapter);
 
 

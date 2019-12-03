@@ -43,7 +43,7 @@
                 android:textSize="18sp"
                 android:text="Giá food"
                 android:textColor="#9B1240"
-                android:id="@+id/txtgiafood"
+                android:id="@+id/txtgia"
                 android:layout_margin="5dp"
                 android:textStyle="bold"/>
             <TextView

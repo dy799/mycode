@@ -29,24 +29,24 @@ import static com.duy.tieuluan.R.id.recyclerView;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button btnSignIn,btnSignUp;
+    Button btntrasua,btnmicay;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         AnhXa();
-        btnSignIn.setOnClickListener(new View.OnClickListener() {
+        btntrasua.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this,SignIn.class);
+                Intent intent = new Intent(MainActivity.this,Shop.class);
                 startActivity(intent);
             }
         });
-        btnSignUp.setOnClickListener(new View.OnClickListener() {
+        btnmicay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this,SignUp.class);
+                Intent intent = new Intent(MainActivity.this,MiCay.class);
                 startActivity(intent);
             }
         });
@@ -54,8 +54,8 @@ public class MainActivity extends AppCompatActivity {
 
 
     protected void AnhXa (){
-        btnSignIn = (Button) findViewById(R.id.btnSignIn);
-        btnSignUp = (Button) findViewById(R.id.btnSignUp);
+        btntrasua = (Button) findViewById(R.id.btntrasua);
+        btnmicay = (Button) findViewById(R.id.btnmicay);
 
 
 

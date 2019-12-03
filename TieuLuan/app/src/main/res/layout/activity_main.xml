@@ -32,9 +32,9 @@
         <Button
             android:background="@drawable/button_sign_up"
             android:layout_weight="1"
-            android:text="Đăng ký"
+            android:text="Trà sữa"
             android:textColor="@android:color/white"
-            android:id="@+id/btnSignUp"
+            android:id="@+id/btntrasua"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
@@ -43,9 +43,9 @@
         <Button
             android:background="@drawable/button_sign_in"
             android:layout_weight="1"
-            android:text="Đăng nhập"
+            android:text="mì cay"
             android:textColor="@android:color/white"
-            android:id="@+id/btnSignIn"
+            android:id="@+id/btnmicay"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"

@@ -54,7 +54,7 @@ public class FoodAdapter extends BaseAdapter {
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             view = inflater.inflate(R.layout.food_listview,null);
             viewHolder.txttenfood = (TextView) view.findViewById(R.id.txttenfood);
-            viewHolder.txtgiafood = (TextView) view.findViewById(R.id.txtgiafood);
+            //viewHolder.txtgiafood = (TextView) view.findViewById(R.id.txtgiafood);
             viewHolder.txtmotafood = (TextView) view.findViewById(R.id.txtmotafood);
             viewHolder.imgfood = (ImageView) view.findViewById(R.id.imgfood);
             view.setTag(viewHolder);
