@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/background"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.duy.tieuluan.MainActivity">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_centerInParent="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="1">
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_alignParentBottom="true"
+
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btntrasua"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="190dp"
+        android:layout_weight="1"
+        android:background="@drawable/button_sign_up"
+        android:text="trà sữa"
+        android:textColor="@android:color/white" />
+    <Button
+        android:id="@+id/btnmicay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="129dp"
+        android:layout_weight="1"
+        android:background="@drawable/button_sign_in"
+        android:text="mì cay"
+        android:textColor="@android:color/white" />
+    <Button
+        android:id="@+id/btngagan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="68dp"
+        android:layout_weight="1"
+        android:background="@drawable/gagan"
+        android:text="gà gán"
+        android:textColor="@android:color/white" />
+
+
+
+
+
+    <Button
+        android:layout_weight="1"
+        android:text="khác"
+        android:textColor="@android:color/white"
+        android:id="@+id/btnkhac"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:background="@drawable/khac"
+        />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="358dp"
+        android:layout_height="263dp"
+        android:layout_above="@+id/btntrasua"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="23dp"
+        android:layout_marginBottom="27dp"
+        app:srcCompat="@drawable/logo_eat_it" />
+
+
+</RelativeLayout>

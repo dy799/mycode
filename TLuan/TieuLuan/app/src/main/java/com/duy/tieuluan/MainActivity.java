@@ -29,7 +29,7 @@ import static com.duy.tieuluan.R.id.recyclerView;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button btntrasua,btnmicay;
+    Button btntrasua,btnmicay,btngagan,btnkhac;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,12 +50,28 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        btngagan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this,GaGan.class);
+                startActivity(intent);
+            }
+        });
+        btnkhac.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this,Khac.class);
+                startActivity(intent);
+            }
+        });
     }
 
 
     protected void AnhXa (){
         btntrasua = (Button) findViewById(R.id.btntrasua);
         btnmicay = (Button) findViewById(R.id.btnmicay);
+        btngagan = (Button) findViewById(R.id.btngagan);
+        btnkhac = (Button) findViewById(R.id.btnkhac);
 
 
 
